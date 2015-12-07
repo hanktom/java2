@@ -24,6 +24,7 @@ public class Person {
 //		p.weight = 65.5f;
 //		p.height = 1.7f;
 		System.out.println(p.bmi());
+		Person p2;
 		
 	}
 }
