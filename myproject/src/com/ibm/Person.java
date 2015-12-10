@@ -38,15 +38,12 @@ public class Person {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("請輸入體重:");
-		String line = scanner.nextLine();
-		System.out.println(line);
-		float w = Float.parseFloat(line);
+		float w = scanner.nextFloat();
 		System.out.print("請輸入身高:");
-		line = scanner.nextLine();
-		System.out.println(line);
-		float h = Float.parseFloat(line);
+		float h = scanner.nextFloat();
 		Person p = new Person(w, h);
 		System.out.println(p.bmi());
+		
 		
 		int n = 5;
 		int m = 7;
