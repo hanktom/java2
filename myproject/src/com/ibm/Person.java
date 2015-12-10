@@ -1,5 +1,7 @@
 package com.ibm;
 
+import java.util.Scanner;
+
 public class Person {
 	float weight;
 	float height;
@@ -11,13 +13,13 @@ public class Person {
 	public String advice(){
 		float bmi = bmi();
 		String msg;
-		if (bmi<16){
-			msg = "多吃點哦";
+		if (bmi>=16 && bmi<=25){
+			msg = "正常";
 		}else{
-			if (bmi>25){
-				msg = "少吃一點哦";
+			if (bmi<16){
+				msg = "多吃一點";
 			}else{
-				msg = "正常";
+				msg = "少吃一點";
 			}
 		}
 		return msg;
@@ -34,15 +36,41 @@ public class Person {
 	}
 	
 	public static void main(String[] args) {
-		System.out.println(6!=3);
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("請輸入體重:");
+		String line = scanner.nextLine();
+		System.out.println(line);
+		float w = Float.parseFloat(line);
+		System.out.print("請輸入身高:");
+		line = scanner.nextLine();
+		System.out.println(line);
+		float h = Float.parseFloat(line);
+		Person p = new Person(w, h);
+		System.out.println(p.bmi());
 		
-		Person p = new Person(65.5f, 1.7f);
-		p.sayHello();
+		int n = 5;
+		int m = 7;
+		if (n>m){
+			System.out.println(n);
+		}else{
+			System.out.println(m);
+		}
+		System.out.println((n>m)? n: m);
+		
+		System.out.println(3+(n++));
+		
+		System.out.println(n);
+		
+//		Person p = new Person(45.5f, 1.7f);
+//		p.sayHello();
 //		p.weight = 65.5f;
 //		p.height = 1.7f;
 		
-		System.out.println(p.advice());
+//		System.out.println(p.advice());
 		
+		float f = 10;
+		float f2 = (float)10.5;
+		System.out.println("abc"+f);
 		
 	}
 	
