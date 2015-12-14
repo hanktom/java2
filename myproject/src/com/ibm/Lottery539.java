@@ -7,9 +7,16 @@ public class Lottery539 {
 	
 	public void generate(){
 		Random r = new Random();
+		int[] spots = new int[40];
 		for (int i=0; i<5; i++){
 			int n = r.nextInt(39)+1;
-			nums[i]=n;
+			if (spots[n]==1){
+				i--;
+				continue;
+			}else{
+				nums[i]=n;
+				spots[n]=1;
+			}
 		}
 	}
 	
