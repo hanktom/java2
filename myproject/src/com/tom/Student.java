@@ -36,10 +36,6 @@ public class Student {
 		System.out.println(Math.random());
 		int n = Integer.parseInt("5");
 		String s = String.valueOf(n);
-		
-		
-		
-		
 //		System.out.println(stu.getAverage());
 	}
 }
