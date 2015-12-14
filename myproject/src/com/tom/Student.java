@@ -27,10 +27,19 @@ public class Student {
 	public static void main(String[] args) {
 		Student stu1 = new Student(60, 44,  70);
 		Student stu2 = new Student(35, 77, 66);
+		
 		Student.pass = 55;
 		stu1.print();
 		stu2.print();
 		stu1.english = 55;
+		System.out.println(Math.max(5, 8));
+		System.out.println(Math.random());
+		int n = Integer.parseInt("5");
+		String s = String.valueOf(n);
+		
+		
+		
+		
 //		System.out.println(stu.getAverage());
 	}
 }
