@@ -3,9 +3,9 @@ package com.ibm;
 import java.util.Random;
 
 public class Lottery539 {
-	int[] nums = new int[5];
+	private int[] nums = new int[5];
 	
-	public void generate(){
+	void generate(){
 		Random r = new Random();
 		int[] spots = new int[40];
 		for (int i=0; i<5; i++){

@@ -1,9 +1,7 @@
 package com.tom;
 
-import com.ibm.Person;
-
 public class Student {
-	int math;
+	public int math;
 	int chinese;
 	int english;
 	static int pass = 60;
@@ -27,8 +25,6 @@ public class Student {
 	}
 	
 	public static void main(String[] args) {
-		Person p = new Person(66.5f, 1.7f);
-		
 		Student stu1 = new Student(60, 44,  70);
 		Student stu2 = new Student(35, 77, 66);
 		
