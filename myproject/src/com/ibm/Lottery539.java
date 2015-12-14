@@ -18,6 +18,25 @@ public class Lottery539 {
 				spots[n]=1;
 			}
 		}
+		/*
+		// put
+		int[] cc = new int[39];
+		for (int i=0; i<39; i++)
+			cc[i] = i+1;
+		for (int i=0; i<39; i++){
+			int n = r.nextInt(39);
+			int tmp = cc[i];
+			cc[i] = cc[n];
+			cc[n] = tmp;
+		}
+		for (int i=0;i<39;i++)
+			System.out.print(cc[i]+" ");
+		for (int i=0;i<5;i++){
+			nums[i] = cc[i];
+		}
+		*/
+		
+		
 	}
 	
 	public void print(){
