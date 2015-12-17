@@ -5,8 +5,6 @@ public class Student {
 	int chinese;
 	int english;
 	static int pass = 60;
-	
-	
 	public Student(int math, int chinese, int english){
 		this.math = math;
 		this.chinese = chinese;
@@ -46,5 +44,16 @@ public class Student {
 		int n = Integer.parseInt("5");
 		String s = String.valueOf(n);
 //		System.out.println(stu.getAverage());
+		//研究生
+		GraduateStudent gstu = new GraduateStudent(55, 77, 66, 67);
+		gstu.print();
+		
+		
 	}
 }
+
+
+
+
+
+
