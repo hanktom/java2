@@ -3,11 +3,19 @@ package com.ibm;
 import java.util.Scanner;
 
 public class Person {
+	String name;
 	float weight;
 	float height;
 	public Person(float weight, float height){
 		this.weight = weight;
 		this.height = height;
+	}
+
+	public Person(){
+		
+	}
+	public Person(String name){
+		this.name = name;
 	}
 	
 	public String advice(){
@@ -31,6 +39,12 @@ public class Person {
 		return bmi;
 	}
 	
+	public float bmi(float weight, float height){
+		float bmi = weight/(height*height);
+		bmi = ((int)(bmi*100))/100.0f ;
+		return bmi;
+	}
+	
 	public void sayHello(){
 		System.out.println("HELLO");
 	}
@@ -45,7 +59,6 @@ public class Person {
 		float h = scanner.nextFloat();
 		Person p = new Person(w, h);
 		System.out.println(p.bmi());
-		
 		
 		int n = 5;
 		int m = 7;
