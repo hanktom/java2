@@ -1,9 +1,11 @@
 package com.tom;
 
+import com.ibm.GraduateStudent;
+
 public class Student {
 	public int math;
-	int chinese;
-	int english;
+	public int chinese;
+	private int english;
 	static int pass = 60;
 	public Student(int math, int chinese, int english){
 		this.math = math;
@@ -18,7 +20,7 @@ public class Student {
 		this(0, 0, english);
 	}
 	
-	public int getAverage(){
+	protected int getAverage(){
 		int avg = (math+chinese+english)/3;
 		return avg;
 	}
@@ -31,6 +33,10 @@ public class Student {
 			System.out.println();
 	}
 	
+	public int getEnglish(){
+		return english;
+	}
+	
 	public static void main(String[] args) {
 		Student stu1 = new Student(60, 44,  70);
 		Student stu2 = new Student(35, 77, 66);
@@ -38,7 +44,7 @@ public class Student {
 		Student.pass = 55;
 		stu1.print();
 		stu2.print();
-		stu1.english = 55;
+		stu1.english = -5;
 		System.out.println(Math.max(5, 8));
 		System.out.println(Math.random());
 		int n = Integer.parseInt("5");
@@ -47,8 +53,6 @@ public class Student {
 		//研究生
 		GraduateStudent gstu = new GraduateStudent(55, 77, 66, 67);
 		gstu.print();
-		
-		
 	}
 }
 

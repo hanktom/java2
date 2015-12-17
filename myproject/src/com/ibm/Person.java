@@ -2,6 +2,8 @@ package com.ibm;
 
 import java.util.Scanner;
 
+import com.tom.Student;
+
 public class Person {
 	String name;
 	float weight;
@@ -83,6 +85,7 @@ public class Person {
 		float f = 10;
 		float f2 = (float)10.5;
 		System.out.println("abc"+f);
+		
 		
 	}
 	
