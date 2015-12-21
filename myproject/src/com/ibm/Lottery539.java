@@ -93,6 +93,7 @@ public class Lottery539 implements Game{
 		for (int i=0;i<games.length;i++){
 			games[i].print();
 		}
+		
 	}
 
 }
