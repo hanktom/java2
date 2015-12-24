@@ -14,12 +14,10 @@ public class SimpleFileOut {
 		FileReader fr = new FileReader("data.txt");
 		BufferedReader in = new BufferedReader(fr);
 		String line = in.readLine();
-		System.out.println(line);
-		line = in.readLine();
-		System.out.println(line);
-		
-		
-		
+		while(line!=null){
+			System.out.println(line);
+			line = in.readLine();
+		}
 	}
 
 	private static void readFile() throws FileNotFoundException, IOException {
