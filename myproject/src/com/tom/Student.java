@@ -2,7 +2,7 @@ package com.tom;
 
 import com.ibm.GraduateStudent;
 
-public class Student {
+public abstract class Student {
 	public int math;
 	public int chinese;
 	private int english;
@@ -25,21 +25,15 @@ public class Student {
 		return avg;
 	}
 	
-	public void print(){
-		System.out.print(math+"\t"+chinese+"\t"+english+"\t"+getAverage());
-		if (getAverage()<pass)
-			System.out.println("*");
-		else
-			System.out.println();
-	}
+	public abstract void print();
 	
 	public int getEnglish(){
 		return english;
 	}
 	
 	public static void main(String[] args) {
-		Student stu1 = new Student(60, 44,  70);
-		Student stu2 = new Student(35, 77, 66);
+		Student stu1 = new CollegeStudent(60, 44,  70);
+		Student stu2 = new CollegeStudent(35, 77, 66);
 		
 		Student.pass = 55;
 		stu1.print();

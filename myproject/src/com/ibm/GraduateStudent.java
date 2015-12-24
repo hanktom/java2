@@ -10,7 +10,7 @@ public class GraduateStudent extends Student implements Reporter{
 	public GraduateStudent(int math, int chinese, int english, int thesis) {
 		super(math, chinese, english);
 		this.thesis = thesis;
-		Student stu = new Student();
+		
 	}
 	public GraduateStudent(int english, int thesis) {
 		super(english);

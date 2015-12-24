@@ -18,6 +18,7 @@ public class Car {
 		try {
 			Date d = sdf.parse(enter);
 			this.enter = d;
+			System.out.println(d);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
