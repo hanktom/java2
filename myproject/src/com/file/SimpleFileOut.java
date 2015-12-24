@@ -10,16 +10,10 @@ public class SimpleFileOut {
 //		writeFile();
 		FileReader in = new FileReader("data.txt");
 		int d = in.read();
-		System.out.println((char)d);
-		d = in.read();
-		System.out.println(d);
-		d = in.read();
-		System.out.println(d);
-		d = in.read();
-		System.out.println(d);
-		d = in.read();
-		System.out.println(d);
-		
+		while(d!=-1){
+			System.out.println((char)d);
+			d = in.read();
+		}
 	}
 
 	private static void writeFile() throws IOException {
