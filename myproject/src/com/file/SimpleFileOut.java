@@ -9,9 +9,40 @@ import java.util.Scanner;
 
 public class SimpleFileOut {
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args)  {
 		// writeFile();
-		// readFile();
+		 readFile();
+//		scoring();
+//		divideByZero();
+
+		try {
+			for (int i = 0; i < args.length; i++) {
+				FileReader fr = new FileReader("data.txt");
+				BufferedReader in = new BufferedReader(fr);
+				String line = in.readLine();
+				while (line != null) {
+					System.out.println(line);
+					line = in.readLine();
+				} 
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	private static void divideByZero() {
+		try {
+			int n = 5 / 3;
+		} catch (ArithmeticException e) {
+			System.out.println("分母不得為零");
+		}
+	}
+
+	private static void scoring() {
 		int sum = 0;
 		Scanner scanner = new Scanner(System.in);
 		for (int i = 0; i < 10; i++) {
@@ -25,28 +56,22 @@ public class SimpleFileOut {
 				System.out.println("格式錯誤,請重新輸入");
 			}
 		}
-
-		try {
-			int n = 5 / 3;
-		} catch (ArithmeticException e) {
-			System.out.println("分母不得為零");
-		}
-
-		FileReader fr = new FileReader("data.txt");
-		BufferedReader in = new BufferedReader(fr);
-		String line = in.readLine();
-		while (line != null) {
-			System.out.println(line);
-			line = in.readLine();
-		}
 	}
 
-	private static void readFile() throws FileNotFoundException, IOException {
-		FileReader in = new FileReader("data.txt");
-		int d = in.read();
-		while (d != -1) {
-			System.out.println((char) d);
-			d = in.read();
+	private static void readFile() {
+		try {
+			FileReader in = new FileReader("data.txt");
+			int d = in.read();
+			while (d != -1) {
+				System.out.println((char) d);
+				d = in.read();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
