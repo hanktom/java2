@@ -4,7 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ParkingLot {
 	int rate = 30;
@@ -24,9 +26,12 @@ public class ParkingLot {
 			String line = in.readLine();
 			while(line!=null){
 				System.out.println(line);
-				
-				
-				
+				String[] s = line.split(",");
+//				System.out.println(s.length);
+//				System.out.println(s[0]);
+//				System.out.println(s[1]);
+				Calendar now = Calendar.getInstance();
+				System.out.println(now);
 				
 				line = in.readLine();
 			}
