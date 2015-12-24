@@ -1,5 +1,9 @@
 package com.parking;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ParkingLot {
@@ -12,6 +16,32 @@ public class ParkingLot {
 	
 	
 	public static void main(String[] args) {
+//		ng();
+		ParkingLot lot = new ParkingLot();
+		try {
+			FileReader fr = new FileReader("parking-data.txt");
+			BufferedReader in = new BufferedReader(fr);
+			String line = in.readLine();
+			while(line!=null){
+				System.out.println(line);
+				
+				
+				
+				
+				line = in.readLine();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+
+	private static void ng() {
 		Scanner scanner = new Scanner(System.in);
 		ParkingLot lot = new ParkingLot();
 		System.out.print("請輸入時間:");
