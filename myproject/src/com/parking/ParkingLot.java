@@ -15,16 +15,55 @@ import java.util.StringTokenizer;
 
 public class ParkingLot {
 	int rate = 30;
-	Car[] cars = new Car[50];
-	
-	public void enter(Car c){
-		
+	SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
+
+	public class Car{
+		String id;
+		Date enter;
+		public Car(String id, Date enter) {
+			super();
+			this.id = id;
+			this.enter = enter;
+		}
+		public Car(String id, String enterString) {
+			this.id = id;
+			try {
+				Date enter = sdf.parse(enterString); 
+				this.enter = enter;
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 	}
 	
-	
 	public static void main(String[] args) {
+		ParkingLot lot = new ParkingLot();
+		try {
+			FileReader fr = new FileReader("parking-data.txt");
+			BufferedReader in = new BufferedReader(fr);
+			String line = in.readLine();
+			while(line!=null){
+				String[] s = line.split(",");
+				
+			}
+				line = in.readLine();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 //		ng();
 //		ParkingLot lot = new ParkingLot();
+//		cheap();
+		
+	}
+
+
+	private static void cheap() {
 		int rate = 30;
 		SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
 		Map<String, String> lot = new HashMap<>();
@@ -35,12 +74,6 @@ public class ParkingLot {
 			while(line!=null){
 				System.out.println(line);
 				String[] s = line.split(",");
-//				System.out.println(s.length);
-//				System.out.println(s[0]);
-//				System.out.println(s[1]);
-//				Calendar now = Calendar.getInstance();
-//				System.out.println(s[0]);
-//				System.out.println(s[1]);
 				String t = s[0];
 				String id = s[1];
 				String enter = lot.remove(id);
@@ -58,11 +91,7 @@ public class ParkingLot {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
 				}
-				
-				
-				
 				line = in.readLine();
 			}
 		} catch (FileNotFoundException e) {
@@ -72,7 +101,6 @@ public class ParkingLot {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 	}
 
 
@@ -83,7 +111,7 @@ public class ParkingLot {
 		String time = scanner.nextLine();
 		System.out.print("請輸入車牌:");
 		String id = scanner.nextLine();
-		Car c1 = new Car(id, time);
+//		Car c1 = new Car(id, time);
 	}
 	
 }
