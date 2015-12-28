@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.TreeSet;
 
 public class CollectionTester {
 
@@ -12,6 +13,19 @@ public class CollectionTester {
 //		bag1();
 //		bagGeneric();
 //		hashset();
+//		hashmap();
+		TreeSet<Integer> nums = new TreeSet<>();
+		nums.add(31);
+		nums.add(22);
+		nums.add(13);
+		nums.add(8);
+		System.out.println(nums);
+		
+		
+		
+	}
+
+	private static void hashmap() {
 		Map<String, String> stocks = new HashMap<>();
 		stocks.put("2330", "台積電");
 		stocks.put("2454", "聯發科");
@@ -26,8 +40,6 @@ public class CollectionTester {
 		temps.put(3, 24.3f);
 		System.out.println(temps.get(2));
 		System.out.println(temps.get(7));
-		
-		
 	}
 
 	private static void hashset() {
