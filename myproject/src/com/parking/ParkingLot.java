@@ -16,10 +16,30 @@ import java.util.StringTokenizer;
 public class ParkingLot {
 	int rate = 30;
 	SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
-
+	Map<String, Car> cars = new HashMap<>();
+	
+	public int process(String id, String time){
+		int mins = 0;
+		if (cars.containsKey(id)){ //出場
+			Car c = cars.remove(id);
+			try {
+				Date leave = sdf.parse(time);
+				long ms = leave.getTime()-c.enter.getTime();
+				mins = (int)(ms/(1000*60));
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}else{//入場
+			cars.put(id, new Car(id, time));
+		}
+		return mins;
+	}
+	
 	public class Car{
 		String id;
-		Date enter;
+		public Date enter;
 		public Car(String id, Date enter) {
 			super();
 			this.id = id;
@@ -44,10 +64,15 @@ public class ParkingLot {
 			BufferedReader in = new BufferedReader(fr);
 			String line = in.readLine();
 			while(line!=null){
+				System.out.println(line);
 				String[] s = line.split(",");
-				
-			}
+				int mins = lot.process(s[1], s[0]);
+				if (mins>0){
+					int fee = (int)(lot.rate*Math.ceil(mins/60f));
+					System.out.println(fee);
+				}
 				line = in.readLine();
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
