@@ -20,9 +20,6 @@ public class CollectionTester {
 		nums.add(13);
 		nums.add(8);
 		System.out.println(nums);
-		
-		
-		
 	}
 
 	private static void hashmap() {
