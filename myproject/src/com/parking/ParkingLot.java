@@ -17,6 +17,8 @@ public class ParkingLot {
 	int rate = 30;
 	SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
 	Map<String, Car> cars = new HashMap<>();
+	Date d;
+	java.sql.Date d2;
 	
 	public int process(String id, String time){
 		int mins = 0;
