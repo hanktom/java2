@@ -15,7 +15,12 @@ public class Wizard extends Player {
 		int n2 = i.intValue();
 		Integer i2 = 100;
 		
-		String s1 = new String("abc");
+		String s1 = new String("abcdefg   ");
+		s1 = s1.trim();
+		System.out.println(s1+"*");
+		System.out.println(s1);
+		System.out.println(s1.replace("c", "K"));
+		System.out.println(s1);
 		String s2 = new String("abc");
 //		String s1 = "abc";
 //		String s2 = "abc";
