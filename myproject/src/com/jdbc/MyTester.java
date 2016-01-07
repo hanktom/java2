@@ -30,11 +30,13 @@ public class MyTester {
 				//Date date = rs.getDate("ctime");
 				int type = rs.getInt("type");
 				System.out.println(cid+"/"+date+"/"+type);
+				Car c = new Car(cid, date);
 				if (type==0){
-					Car c = new Car(cid, date);
-					
+					lot.add(c);
+				}else{
+					int fee = lot.remove(c);
+					System.out.println(fee);
 				}
-				
 			}
 			
 		} catch (ClassNotFoundException e) {

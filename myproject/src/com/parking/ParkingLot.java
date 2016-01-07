@@ -19,6 +19,20 @@ public class ParkingLot {
 	Map<String, Car> cars = new HashMap<>();
 	Date d;
 	java.sql.Date d2;
+	public void add(Car c){
+		cars.put(c.id, c);
+	}
+	
+	public int remove(Car c){
+		int fee = 0;
+		if (cars.containsKey(c.id)){
+//			Car car = cars.remove(c);
+			Car car = cars.remove(c.id);
+			int mins = (int)((c.enter.getTime()-car.enter.getTime())/(1000*60));
+			fee = rate*(int)Math.ceil(mins/60.0f);
+		}
+		return fee;
+	}
 	
 	public int process(String id, String time){
 		int mins = 0;
