@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class MyTester {
@@ -20,9 +21,13 @@ public class MyTester {
 			ResultSet rs = stmt.executeQuery("select * from parking");
 			while(rs.next()){
 				String cid = rs.getString("car_id");
-				Date date = rs.getDate("ctime");
+				Timestamp ts = rs.getTimestamp("ctime");
+				Date date = new Date(ts.getTime());
+				//Date date = rs.getDate("ctime");
 				int type = rs.getInt("type");
 				System.out.println(cid+"/"+date+"/"+type);
+				
+				
 			}
 			
 		} catch (ClassNotFoundException e) {
