@@ -39,25 +39,7 @@ public class ParkingLot {
 		return mins;
 	}
 	
-	public class Car{
-		String id;
-		public Date enter;
-		public Car(String id, Date enter) {
-			super();
-			this.id = id;
-			this.enter = enter;
-		}
-		public Car(String id, String enterString) {
-			this.id = id;
-			try {
-				Date enter = sdf.parse(enterString); 
-				this.enter = enter;
-			} catch (ParseException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-	}
+	
 	
 	public static void main(String[] args) {
 		ParkingLot lot = new ParkingLot();

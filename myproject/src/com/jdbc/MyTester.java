@@ -8,12 +8,16 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import com.parking.Car;
+import com.parking.ParkingLot;
+
 public class MyTester {
 
 	public static void main(String[] args) {
 		String url = "jdbc:mysql://j.snpy.org/java1?"
 				+ "user=java1&password=jjaa989&"
 				+ "useUnicode=true&characterEncoding=UTF-8";
+		ParkingLot lot = new ParkingLot();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection(url);
@@ -26,7 +30,10 @@ public class MyTester {
 				//Date date = rs.getDate("ctime");
 				int type = rs.getInt("type");
 				System.out.println(cid+"/"+date+"/"+type);
-				
+				if (type==0){
+					Car c = new Car(cid, date);
+					
+				}
 				
 			}
 			
