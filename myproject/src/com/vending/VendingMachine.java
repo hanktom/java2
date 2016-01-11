@@ -1,8 +1,21 @@
 package com.vending;
 
 public class VendingMachine {
-	int total = 0;
+	private int total = 0;
 	
+		
+	public int getTotal() {
+		return total;
+	}
+
+	public void setTotal(int total) {
+		if (total>50){
+			this.total = 50;
+		}else{
+			this.total = total;
+		}
+	}
+
 	public void insertCoin(int coin){
 		switch(coin){
 		case 1:
