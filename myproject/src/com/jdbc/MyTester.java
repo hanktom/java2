@@ -25,7 +25,8 @@ public class MyTester {
 //			query(lot, conn);
 			String carId = "AABB";
 			PreparedStatement pstmt = 
-					conn.prepareStatement("insert into parking2(car_id, ctime, type) values(?,?,?)");
+					conn.prepareStatement("insert into parking2(car_id, ctime, type) "
+							+ "values(?,?,?)");
 			pstmt.setString(1, carId);
 			pstmt.setTimestamp(2, new Timestamp(new Date().getTime()));
 			pstmt.setInt(3, 0);
