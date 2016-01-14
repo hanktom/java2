@@ -18,9 +18,7 @@ public class Main {
 			case "10":
 				vend.insertCoin(Integer.parseInt(line));
 				break;
-			case "a":
-			case "b":
-			case "c":
+			default:
 				boolean success = vend.select(line);
 				if (success){
 					System.out.println("DON!");
